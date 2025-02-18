@@ -1,19 +1,37 @@
-// import './App.css'
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "./services/auth/auth_firebase_config.js";
 
 function App() {
 
-    const handleClick = async () => {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        console.log(result.user);
+    const cacheName = "testCache"
+    const imagePathOne = "/AH Conceptueel Model (2).png"
+    const imagePathTwo = "/Zuil 4.png"
+
+    const handleAddToCache = () => {
+        caches.open(cacheName)
+            .then(cache => {
+                cache.add(imagePathOne)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    const handleRemoveFromCache = () => {
+        caches.open(cacheName)
+            .then(cache => {
+                cache.delete(imagePathOne)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
   return (
-    <>
-      <button onClick={handleClick} >Click to login with Google</button>
-    </>
+      <>
+          <img src={imagePathTwo} alt="Image Two" />
+          <button onClick={handleAddToCache}>handleAddToCache 1</button>
+          <button onClick={handleRemoveFromCache}>handleRemoveFromCache 2</button>
+
+      </>
   )
 }
 
