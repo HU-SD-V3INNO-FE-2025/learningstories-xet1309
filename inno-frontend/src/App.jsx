@@ -1,4 +1,3 @@
-import './App.css'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "./services/auth/auth_firebase_config.js";
 
