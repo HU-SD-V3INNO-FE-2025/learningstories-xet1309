@@ -2,7 +2,7 @@
 function App() {
 
     const cacheName = "testCache"
-    const imagePathOne = "/Zuil 6.png"
+    const imagePathOne = "/AH Conceptueel Model (2).png"
     const imagePathTwo = "/Zuil 4.png"
 
     const handleAddToCache = () => {
