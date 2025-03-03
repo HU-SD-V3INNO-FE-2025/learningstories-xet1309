@@ -5,7 +5,7 @@ PROJECT_ROOT="learningstories-xet1309"
 WORKING_DIR="$PROJECT_ROOT"
 DEPLOY_FOLDER="dist"
 GIT_COMMIT_MESSAGE="New build for deploy: $(date)"
-GIT_BRANCH_REMOTE="gh-pages"
+GIT_BRANCH_REMOTE="deploy"
 GIT_REPO_REMOTE="https://github.com/HU-SD-V3INNO-FE-2025/learningstories-xet1309.git"
 
 # Abort on errors
