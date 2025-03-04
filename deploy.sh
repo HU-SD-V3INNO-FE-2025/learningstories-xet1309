@@ -31,8 +31,8 @@ echo > .nojekyll
 git init
 
 # Stel een geldige gebruiker in voor GitHub Actions
-git config user.name "GitHub Actions Bot"
-git config user.email "github-actions[bot]@users.noreply.github.com"
+git config user.name "xet1309"
+git config user.email "xavier.tromp@student.hu.nl"
 
 # Wissel naar de lokale branch
 git checkout -B $GIT_BRANCH_LOCAL
