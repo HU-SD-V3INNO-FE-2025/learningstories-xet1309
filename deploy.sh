@@ -11,9 +11,6 @@ GIT_REPO_REMOTE="https://github.com/HU-SD-V3INNO-FE-2025/learningstories-xet1309
 # Abort on errors
 set -e
 
-# Navigate to working directory
-cd $WORKING_DIR
-
 # Remove previous build output
 rm -rf $DEPLOY_FOLDER
 
