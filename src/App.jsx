@@ -2,8 +2,8 @@
 function App() {
 
     const cacheName = "testCache"
-    const imagePathOne = "learningstories-xet1309/AH%20Conceptueel%20Model.png";
-    const imagePathTwo = "learningstories-xet1309/Zuil%204.png";
+    const imagePathOne = "/AH Conceptueel Model.png"
+    const imagePathTwo = "/Zuil 4.png"
 
     const handleAddToCache = () => {
         caches.open(cacheName)
