@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # Configuratie
+GH_TOKEN="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"
 PROJECT_ROOT="learningstories-xet1309"
 DEPLOY_FOLDER="dist"
 GIT_COMMIT_MESSAGE="New build for deploy: $(date)"
 GIT_BRANCH_REMOTE="gh-pages"
-GIT_REPO_REMOTE="https://github.com/HU-SD-V3INNO-FE-2025/learningstories-xet1309.git"
+GIT_REPO_REMOTE="https://xet1309:${GH_TOKEN}@github.com/HU-SD-V3INNO-FE-2025/learningstories-xet1309.git"
 GIT_BRANCH_LOCAL="main"
 
 # Stop script bij fouten
