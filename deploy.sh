@@ -1,47 +1,36 @@
 #!/bin/sh
 
-# Init local variables
 PROJECT_ROOT="learningstories-xet1309"
 DEPLOY_FOLDER="dist"
 GIT_COMMIT_MESSAGE="New build for deploy: $(date)"
 GIT_BRANCH_REMOTE="gh-pages"
 GIT_REPO_REMOTE="https://github.com/HU-SD-V3INNO-FE-2025/learningstories-xet1309.git"
 
-# Abort on errors
+# abort on errors
 set -e
-
-# Remove previous build output
+# remove the deploy folder
 rm -rf $DEPLOY_FOLDER
-
-# Build the project
-npm install
+# First run the build command as usual
 npm run build
-
-# Navigate into the build output folder
+# navigate into the build output folder (default this is dist/)
 cd $DEPLOY_FOLDER
-
-# Copy index.html to 404.html to prevent 404 errors on direct route navigation
+# copy index.html to 404.html
+# to fix 404 errors on navigating to a route directly
 cp index.html 404.html
-
-# Create empty .nojekyll file to bypass Jekyll processing
+# create empty .nojekyll file to bypass Jekyll processing (a gitHub thing)
 echo > .nojekyll
 
-# Initialize git in the dist folder
+# initialize git IN THE DIST FOLDER (we navigated here above)
 git init
-git checkout -B main
-
-# ✅ FIX: Stel GitHub Actions bot als gebruiker in
-git config --local user.email "github-actions[bot]@users.noreply.github.com"
-git config --local user.name "github-actions[bot]"
-
-# Add all files to Git
+# if not exists create a new local branche called 'deploy'
+# otherwise reset the branch
+git checkout -B $GIT_BRANCH_LOCAL
+# add all files to the git index
 git add -A
-
-# Commit de wijzigingen
+# commit all changes with the message 'deploy'
 git commit -m "$GIT_COMMIT_MESSAGE"
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+git push -f $GIT_REPO_REMOTE $GIT_BRANCH_LOCAL:$GIT_BRANCH_REMOTE
 
-# Push naar de GitHub Pages branch (force push)
-git push -f $GIT_REPO_REMOTE main:$GIT_BRANCH_REMOTE
 
-# ✅ Geen extra cd nodig, we blijven in de juiste directory
-echo "✅ Deployment to GitHub Pages complete!"
+
