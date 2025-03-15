@@ -22,9 +22,14 @@ const CustomerInfoController = () => {
         setCustomer(customer);
     }
 
-    const handleRemoveCustomer = async (key) => {
-        console.log(key);
-        const customer = await customerInfoService.removeCustomer(key);
+    const handleRemoveCustomer = async (data) => {
+        console.log(data);
+        const customer = await customerInfoService.removeCustomer(data.key);
+        fetchCustomers()
+    }
+
+    const handleUpdateCustomer = async (key, data) => {
+        const customer = await customerInfoService.updateCustomer(key, data);
         fetchCustomers()
     }
 

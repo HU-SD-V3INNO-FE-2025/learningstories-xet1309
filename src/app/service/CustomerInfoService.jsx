@@ -18,6 +18,10 @@ class CustomerInfoService extends IBDatabase {
         return await super.removeCustomer(key);
     }
 
+    async updateCustomer(key, customer) {
+        return await super.updateCustomer(key, customer);
+    }
+
 
 }
 

@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const CustomerInfo = ({ addCustomer, customers, removeCustomer }) => {
+const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }) => {
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
 
@@ -28,7 +28,9 @@ const CustomerInfo = ({ addCustomer, customers, removeCustomer }) => {
                         <div key={customer.key} className="customer-name">
                             <p>Name: {customer.name}</p>
                             <p>Email: {customer.email}</p>
-                            <button onClick={() => removeCustomer(customer.key)} type="submit">Remove</button>
+                            <button onClick={() => removeCustomer(customer)} type="submit">Remove</button>
+                            <button onClick={() => updateCustomer(customer)} type="submit">Edit</button>
+
                         </div>
                     ))}
                 </div>

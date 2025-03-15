@@ -52,6 +52,10 @@ class IBDatabase {
         return await this.db.delete(this.storeName, key);
     }
 
+    async updateCustomer(key, customer) {
+        return await this.db.put(this.storeName, customer, key);
+    }
+
 }
 
 export { IBDatabase };
