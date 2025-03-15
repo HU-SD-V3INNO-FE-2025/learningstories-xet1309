@@ -17,7 +17,6 @@ class IBDatabase {
         if (!this.db.objectStoreNames.contains(this.storeName)) {
             this.db.createObjectStore(this.storeName, {
                 autoIncrement: true,
-                keyPath: 'key',
             });
             console.log(`${this.storeName} store created`);
         }
