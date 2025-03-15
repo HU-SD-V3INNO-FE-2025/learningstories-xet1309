@@ -28,13 +28,19 @@ const CustomerInfoController = () => {
         fetchCustomers()
     }
 
-    const handleUpdateCustomer = async (key, data) => {
-        const customer = await customerInfoService.updateCustomer(key, data);
-        fetchCustomers()
-    }
+    const handleUpdateCustomer = async (data) => {
+        await customerInfoService.updateCustomer(data.key, data);
+        fetchCustomers();
+    };
+
 
     return(
-        <CustomerInfo addCustomer={handleAddCustomer} customers={customers} removeCustomer={handleRemoveCustomer} />
+        <CustomerInfo
+            addCustomer={handleAddCustomer}
+            customers={customers}
+            removeCustomer={handleRemoveCustomer}
+            updateCustomer={handleUpdateCustomer}
+        />
     )
 }
 

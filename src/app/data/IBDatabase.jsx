@@ -17,6 +17,7 @@ class IBDatabase {
         if (!this.db.objectStoreNames.contains(this.storeName)) {
             this.db.createObjectStore(this.storeName, {
                 autoIncrement: true,
+                keyPath: "key"
             });
             console.log(`${this.storeName} store created`);
         }
@@ -52,9 +53,15 @@ class IBDatabase {
         return await this.db.delete(this.storeName, key);
     }
 
+// IBDatabase.jsx
     async updateCustomer(key, customer) {
-        return await this.db.put(this.storeName, customer, key);
+        // Verwijder de key uit het customer object (de key wordt automatisch beheerd door de keyPath)
+        const { key: _, ...customerWithoutKey } = customer;
+
+        // Roep put aan met het aangepaste customer object zonder de key
+        return await this.db.put(this.storeName, customerWithoutKey, key);
     }
+
 
 }
 

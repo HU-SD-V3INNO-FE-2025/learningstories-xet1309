@@ -3,22 +3,34 @@ import {useState} from "react";
 const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }) => {
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
+    const [isEditing, setIsEditing] = useState(null);
+    const [selectedCustomer, setSelectedCustomer] = useState(null);
 
     const handleOnClick = () => {
         if (!name || !email) return
-        addCustomer({ name, email });
+
+        else if (isEditing) {
+
+            updateCustomer(selectedCustomer);
+        }
+
+        else if (!isEditing) {
+            addCustomer({ name, email });
+        }
         setName(null);
         setEmail(null);
+        setIsEditing(false)
+        setSelectedCustomer(null);
     }
 
     return (
         <>
             <div>
                 <form>
-                    <h2>Add customer</h2>
+                    <h2>{isEditing ? "Update Customer" : "Add Customer"}</h2>
                     <input type="text" className="name" onChange={(e) => setName(e.target.value)} />
                     <input type="text" className="email" onChange={(e) => setEmail(e.target.value)} />
-                    <button onClick={handleOnClick} type="submit">Add Customer</button>
+                    <button onClick={handleOnClick} type="button">{isEditing ? "Update" : "Add"}</button>
                 </form>
             </div>
             <div>
@@ -29,8 +41,10 @@ const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }
                             <p>Name: {customer.name}</p>
                             <p>Email: {customer.email}</p>
                             <button onClick={() => removeCustomer(customer)} type="submit">Remove</button>
-                            <button onClick={() => updateCustomer(customer)} type="submit">Edit</button>
-
+                            <button onClick={() => {
+                                setIsEditing(true)
+                                setSelectedCustomer(customer)
+                            }} type="submit">Edit</button>
                         </div>
                     ))}
                 </div>
