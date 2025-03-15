@@ -9,6 +9,10 @@ class CustomerInfoService extends IBDatabase {
         return await super.addCustomer(customer);
     }
 
+    async getCustomers() {
+        return await super.getCustomers();
+    }
+
 
 }
 

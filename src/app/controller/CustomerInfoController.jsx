@@ -1,11 +1,21 @@
 import CustomerInfo from "../view/CustomerInfo.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {customerInfoService} from "../service/CustomerInfoService.jsx";
 
 
 
 const CustomerInfoController = () => {
     const[customer, setCustomer] = useState({});
+    const[customers, setCustomers] = useState([]);
+
+    useEffect(() => {
+        fetchCustomers()
+    },[customer]);
+
+    const fetchCustomers = async () => {
+        const customers = await customerInfoService.getCustomers()
+        setCustomers(customers);
+    }
 
     const handleAddCustomer = (data) => {
         customerInfoService.addCustomer(data);
@@ -13,7 +23,7 @@ const CustomerInfoController = () => {
     }
 
     return(
-        <CustomerInfo addCustomer={handleAddCustomer} />
+        <CustomerInfo addCustomer={handleAddCustomer} customers={customers} />
     )
 }
 

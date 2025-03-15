@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const CustomerInfo = ({ addCustomer }) => {
+const CustomerInfo = ({ addCustomer, customers }) => {
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
 
@@ -15,10 +15,21 @@ const CustomerInfo = ({ addCustomer }) => {
         <>
             <div>
                 <form>
+                    <h2>Add customer</h2>
                     <input type="text" className="name" onChange={(e) => setName(e.target.value)} />
-                    <input type="email" className="email" onChange={(e) => setEmail(e.target.value)} />
-                    <button onClick={handleOnClick} type="button">Add Customer</button>
+                    <input type="text" className="email" onChange={(e) => setEmail(e.target.value)} />
+                    <button onClick={handleOnClick} type="submit">Add Customer</button>
                 </form>
+            </div>
+            <div>
+                <h2>Customers</h2>
+                <div>
+                    {customers.map(customer => (
+                        <div key={customer.id} className="customer-name">
+                            <p>Name: {customer.name}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )

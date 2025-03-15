@@ -43,6 +43,10 @@ class IBDatabase {
         return await this.db.add(this.storeName, customer);
     }
 
+    async getCustomers() {
+        return await this.db.getAll(this.storeName);
+    }
+
 }
 
 export { IBDatabase };
