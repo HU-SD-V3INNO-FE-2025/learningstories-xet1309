@@ -4,8 +4,22 @@ import React from "react";
 
 
 function App() {
-    // return <CacheComponentController/>;
-    // return <FirebaseController/>
+    return (
+        <>
+            <div>
+                <h1>Cache LearningStory</h1>
+                <CacheComponentController/>;
+            </div>
+
+            <div>
+                <h1>Firebase Service</h1>
+                <FirebaseController/>
+            </div>
+
+        </>
+
+    )
+
 
 }
 
