@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDH8hQdrgCsjDg8tXDykWpGViR3Hug1ZmU",
-    authDomain: "innofrontend.firebaseapp.com",
+    authDomain: "https://hu-sd-v3inno-fe-2025.github.io/learningstories-xet1309/",
     projectId: "innofrontend",
     storageBucket: "innofrontend.firebasestorage.app",
     messagingSenderId: "637215016272",
