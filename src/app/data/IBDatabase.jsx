@@ -17,6 +17,7 @@ class IBDatabase {
         if (!this.db.objectStoreNames.contains(this.storeName)) {
             this.db.createObjectStore(this.storeName, {
                 autoIncrement: true,
+                keyPath: 'key',
             });
             console.log(`${this.storeName} store created`);
         }
@@ -45,6 +46,11 @@ class IBDatabase {
 
     async getCustomers() {
         return await this.db.getAll(this.storeName);
+    }
+
+
+    async removeCustomer(key) {
+        return await this.db.delete(this.storeName, key);
     }
 
 }

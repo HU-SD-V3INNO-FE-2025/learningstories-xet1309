@@ -10,20 +10,26 @@ const CustomerInfoController = () => {
 
     useEffect(() => {
         fetchCustomers()
-    },[customer]);
+    },[]);
 
     const fetchCustomers = async () => {
         const customers = await customerInfoService.getCustomers()
         setCustomers(customers);
     }
 
-    const handleAddCustomer = (data) => {
-        customerInfoService.addCustomer(data);
-        setCustomer(data);
+    const handleAddCustomer = async (data) => {
+        const customer = await customerInfoService.addCustomer(data);
+        setCustomer(customer);
+    }
+
+    const handleRemoveCustomer = async (key) => {
+        console.log(key);
+        const customer = await customerInfoService.removeCustomer(key);
+        fetchCustomers()
     }
 
     return(
-        <CustomerInfo addCustomer={handleAddCustomer} customers={customers} />
+        <CustomerInfo addCustomer={handleAddCustomer} customers={customers} removeCustomer={handleRemoveCustomer} />
     )
 }
 

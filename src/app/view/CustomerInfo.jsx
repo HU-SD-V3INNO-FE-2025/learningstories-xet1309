@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const CustomerInfo = ({ addCustomer, customers }) => {
+const CustomerInfo = ({ addCustomer, customers, removeCustomer }) => {
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
 
@@ -25,8 +25,10 @@ const CustomerInfo = ({ addCustomer, customers }) => {
                 <h2>Customers</h2>
                 <div>
                     {customers.map(customer => (
-                        <div key={customer.id} className="customer-name">
+                        <div key={customer.key} className="customer-name">
                             <p>Name: {customer.name}</p>
+                            <p>Email: {customer.email}</p>
+                            <button onClick={() => removeCustomer(customer.key)} type="submit">Remove</button>
                         </div>
                     ))}
                 </div>

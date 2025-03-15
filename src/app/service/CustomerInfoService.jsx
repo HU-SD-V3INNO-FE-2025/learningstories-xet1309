@@ -10,7 +10,12 @@ class CustomerInfoService extends IBDatabase {
     }
 
     async getCustomers() {
-        return await super.getCustomers();
+        return super.getCustomers();
+    }
+
+    async removeCustomer(key) {
+        console.log(key);
+        return await super.removeCustomer(key);
     }
 
 
