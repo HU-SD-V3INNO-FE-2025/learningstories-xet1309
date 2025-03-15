@@ -23,3 +23,5 @@ const CustomerInfo = ({ addCustomer }) => {
         </>
     )
 }
+
+export default CustomerInfo
