@@ -9,19 +9,22 @@ const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }
     const handleOnClick = () => {
         if (!name || !email) return
 
-        const newCustomer = {
+        const customer = {
             name,
-            email
+            email,
         }
+
+        console.log(selectedCustomer);
+        console.log(customer);
 
         if (isEditing) {
             const customerToUpdate = {
-                ...newCustomer,
+                ...customer,
                 key: selectedCustomer.key
             }
-            updateCustomer(customerToUpdate)
+            updateCustomer(customerToUpdate);
         } else {
-            addCustomer(newCustomer)
+            addCustomer(customer)
         }
     }
 
@@ -32,7 +35,7 @@ const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }
                     <h2>{isEditing ? "Update Customer" : "Add Customer"}</h2>
                     <input type="text" className="name" onChange={(e) => setName(e.target.value)} />
                     <input type="text" className="email" onChange={(e) => setEmail(e.target.value)} />
-                    <button onClick={handleOnClick} type="submit">{isEditing ? "Update" : "Add"}</button>
+                    <button onClick={handleOnClick} type="button">{isEditing ? "Update" : "Add"}</button>
                 </form>
             </div>
             <div>
