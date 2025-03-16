@@ -1,6 +1,7 @@
 import CacheComponentController from "./app/controller/CacheComponentController.jsx";
 import FirebaseController from "./app/controller/FirebaseController.jsx";
 import React from "react";
+import CustomerInfoController from "./app/controller/CustomerInfoController.jsx";
 
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
             <div>
                 <h1>Firebase Service</h1>
                 <FirebaseController/>
+            </div>
+
+            <div>
+                <h1>IndexDB</h1>
+                <CustomerInfoController/>
             </div>
 
         </>

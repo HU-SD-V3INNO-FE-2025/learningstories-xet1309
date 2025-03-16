@@ -13,7 +13,6 @@ const CacheComponentController = () => {
 
     const fetchImage = async () => {
         const cacheItem = await getFromCache(imagePathOne)
-        console.log(cacheItem)
         if (cacheItem) {
             setImage(cacheItem.url)
         } else {
