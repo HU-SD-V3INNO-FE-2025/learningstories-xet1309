@@ -35,7 +35,7 @@ const CustomerInfo = ({ addCustomer, customers, removeCustomer, updateCustomer }
                     <h2>{isEditing ? "Update Customer" : "Add Customer"}</h2>
                     <input type="text" className="name" onChange={(e) => setName(e.target.value)} />
                     <input type="text" className="email" onChange={(e) => setEmail(e.target.value)} />
-                    <button onClick={handleOnClick} type="button">{isEditing ? "Update" : "Add"}</button>
+                    <button onClick={handleOnClick} type="submit">{isEditing ? "Update" : "Add"}</button>
                 </form>
             </div>
             <div>
