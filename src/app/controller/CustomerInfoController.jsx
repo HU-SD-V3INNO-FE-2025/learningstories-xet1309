@@ -29,7 +29,7 @@ const CustomerInfoController = () => {
     }
 
     const handleUpdateCustomer = async (data) => {
-        await customerInfoService.updateCustomer(data.key, data);
+        await customerInfoService.updateCustomer(data);
         fetchCustomers();
     };
 

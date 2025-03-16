@@ -16,8 +16,8 @@ class IBDatabase {
         console.log(`migrate from version 0 to version 1`);
         if (!this.db.objectStoreNames.contains(this.storeName)) {
             this.db.createObjectStore(this.storeName, {
+                keyPath: "key",
                 autoIncrement: true,
-                keyPath: "key"
             });
             console.log(`${this.storeName} store created`);
         }
@@ -53,8 +53,8 @@ class IBDatabase {
         return await this.db.delete(this.storeName, key);
     }
 
-    async updateCustomer(key, customer) {
-        return await this.db.put(this.storeName, customer, key);
+    async updateCustomer(customer) {
+        return await this.db.put(this.storeName, customer);
     }
 
 }

@@ -1,12 +1,19 @@
-import { IBDatabase } from "/src/app/data/IBDatabase.jsx";
+import {IBDatabase} from "/src/app/data/IBDatabase.jsx";
 
 class CustomerInfoService extends IBDatabase {
     constructor() {
         super();
     }
 
+    async generateIDForCustomer(customer) {
+        return {
+            key: Date.now(),
+            ...customer
+        };
+    }
+
     async addCustomer(customer) {
-        return await super.addCustomer(customer);
+        return await super.addCustomer(await this.generateIDForCustomer(customer));
     }
 
     async getCustomers() {
@@ -18,8 +25,8 @@ class CustomerInfoService extends IBDatabase {
         return await super.removeCustomer(key);
     }
 
-    async updateCustomer(key, customer) {
-        return await super.updateCustomer(key, customer);
+    async updateCustomer(customer) {
+        return await super.updateCustomer(customer);
     }
 
 
