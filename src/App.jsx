@@ -2,7 +2,8 @@ import CacheComponentController from "./app/controller/CacheComponentController.
 import FirebaseController from "./app/controller/FirebaseController.jsx";
 import React from "react";
 import CustomerInfoController from "./app/controller/CustomerInfoController.jsx";
-import {NativeDeviceFeatureController} from "./app/controller/NativeDeviceFeatureController.jsx";
+import {WebcamController} from "./app/controller/WebcamController.jsx";
+import {UserLocationController} from "./app/controller/UserLocationController.jsx";
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
             </div>
 
             <div>
-                <NativeDeviceFeatureController/>
+                <h1>Native Device Features/PWA</h1>
+                <WebcamController/>
+                <UserLocationController/>
             </div>
 
         </>

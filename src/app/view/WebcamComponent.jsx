@@ -1,17 +1,18 @@
 
 
-export const NativeDeviceFeaturesComponent = ({
+export const WebcamComponent = ({
                                                   startCamera,
                                                   captureHandler,
                                                   stopCamera,
                                                   selectCamera,
                                                   webcams,
                                                   videoRef,
-                                                  capturedImage
+                                                  capturedImage,
+
+
                                               }) => {
     return (
-        <>  <h1>Native Device Features</h1>
-
+        <>
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',

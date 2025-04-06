@@ -1,8 +1,8 @@
-import {NativeDeviceFeaturesComponent} from "../view/NativeDeviceFeaturesComponent.jsx";
+import {WebcamComponent} from "../view/WebcamComponent.jsx";
 import {useEffect, useRef, useState} from "react";
 
 
-export const NativeDeviceFeatureController = () => {
+export const WebcamController = () => {
     const [webcams, setWebcams] = useState([]);
     const [isCameraSelected, setIsCameraSelected] = useState(false);
     const [selectedCamera, setSelectedCamera] = useState(null);
@@ -78,11 +78,8 @@ export const NativeDeviceFeatureController = () => {
         fetchWebcams();
     }, []);
 
-
-
-
     return(
-        <NativeDeviceFeaturesComponent
+        <WebcamComponent
             startCamera={startCamera}
             captureHandler={captureHandler}
             stopCamera={stopCamera}
