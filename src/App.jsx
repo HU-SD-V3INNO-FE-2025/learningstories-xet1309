@@ -2,6 +2,7 @@ import CacheComponentController from "./app/controller/CacheComponentController.
 import FirebaseController from "./app/controller/FirebaseController.jsx";
 import React from "react";
 import CustomerInfoController from "./app/controller/CustomerInfoController.jsx";
+import {NativeDeviceFeatureController} from "./app/controller/NativeDeviceFeatureController.jsx";
 
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
             <div>
                 <h1>IndexDB</h1>
                 <CustomerInfoController/>
+            </div>
+
+            <div>
+                <NativeDeviceFeatureController/>
             </div>
 
         </>
