@@ -38,11 +38,10 @@ export const NativeDeviceFeatureController = () => {
         if (videoElement.srcObject) {
             videoElement.srcObject.getTracks().forEach((track) => track.stop());
         }
-
-        setIsCameraSelected(false);
     }
 
     const captureHandler = () => {
+        if (!selectedCamera) return
         const videoElement = videoRef.current;
         const canvas = document.createElement('canvas');
         canvas.width = videoElement.videoWidth;
@@ -59,8 +58,15 @@ export const NativeDeviceFeatureController = () => {
     }
 
     const selectCamera = (e) => {
-        setSelectedCamera(e.target.value);
-        setIsCameraSelected(true);
+        const value = e.target.value;
+        if (!value) {
+            setSelectedCamera(null);
+            setIsCameraSelected(false);
+        } else {
+            setSelectedCamera(value);
+            setIsCameraSelected(true);
+        }
+
     };
 
 
