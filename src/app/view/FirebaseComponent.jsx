@@ -8,7 +8,7 @@ const FirebaseComponent = ({ signIn, signOut, user }) => {
                 <>
                     <p>Logged in as: {user.email}</p>
                     <p>Also known as: {user.displayName}</p>
-                    <img src={user.photoURL}  alt="Profile picture"  />
+                    <img src={user.photoURL}  alt="Profile capturedImage"  />
                 </>
             )}
             {/*<input type="text" className="email"/>*/}
