@@ -11,13 +11,11 @@ export const NativeDeviceFeatureController = () => {
     const videoRef = useRef(null);
 
     const startCamera = () => {
-        if (isCameraSelected) return
+        if (!isCameraSelected) return
 
         const constraints = {
             audio: false,
-            video: {
-                deviceId: selectedCamera,
-            },
+            video: selectedCamera ? { deviceId: { exact: selectedCamera } } : true,
         }
 
         const videoElement = videoRef.current;
