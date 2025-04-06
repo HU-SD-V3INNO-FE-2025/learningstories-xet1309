@@ -20,7 +20,7 @@ export const WebcamComponent = ({
                 <div>
                     <h2>Webcam-Feature</h2>
                     <button onClick={startCamera}>Start camera</button>
-                    <button onClick={captureHandler}>Take a capturedImage</button>
+                    <button onClick={captureHandler}>Capture Image</button>
                     <button onClick={stopCamera}>Stop camera</button>
 
                     <video ref={videoRef} autoPlay width="640" height="480"/>
