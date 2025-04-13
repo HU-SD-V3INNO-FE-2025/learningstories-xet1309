@@ -4,6 +4,7 @@ import React from "react";
 import CustomerInfoController from "./app/controller/CustomerInfoController.jsx";
 import {WebcamController} from "./app/controller/WebcamController.jsx";
 import {UserLocationController} from "./app/controller/UserLocationController.jsx";
+import {FirestoreController} from "./app/controller/FirestoreController.jsx";
 
 
 function App() {
@@ -28,6 +29,11 @@ function App() {
                 <h1>Native Device Features/PWA</h1>
                 <WebcamController/>
                 <UserLocationController/>
+            </div>
+
+            <div>
+                <h1>Firestore</h1>
+                <FirestoreController/>
             </div>
 
         </>
