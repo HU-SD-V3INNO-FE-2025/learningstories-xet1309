@@ -4,7 +4,9 @@ export const FirestoreComponent = ({
        name, setName,
        email, setEmail,
        customers,
-       onSubmit
+       onSubmit,
+    onDelete,
+    onUpdate,
                                    }) => {
     return (
         <>
@@ -17,8 +19,10 @@ export const FirestoreComponent = ({
             <span>Customers</span>
             {customers && customers.length > 0 && (
                 customers.map((customer, index) => (
-                    <div key={index}>
+                    <div key={customer.id}>
                         <p>{customer.name}</p>
+                        <button onClick={() => onDelete(customer.id)}>Delete</button>
+                        <button onClick={() => onUpdate(customer)}>Edit</button>
                     </div>
                 ))
             )}
