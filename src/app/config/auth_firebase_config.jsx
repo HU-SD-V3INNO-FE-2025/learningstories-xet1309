@@ -4,12 +4,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDH8hQdrgCsjDg8tXDykWpGViR3Hug1ZmU",
-    authDomain: "innofrontend.firebaseapp.com",
-    projectId: "innofrontend",
-    storageBucket: "innofrontend.firebasestorage.app",
-    messagingSenderId: "637215016272",
-    appId: "1:637215016272:web:eca101d8908c87612b9855"
+    apiKey: "AIzaSyCSRvJn_B__2T0CL0-3RRGRz7f1bXTCSLI",
+    authDomain: "learningstories-a4558.firebaseapp.com",
+    projectId: "learningstories-a4558",
+    storageBucket: "learningstories-a4558.firebasestorage.app",
+    messagingSenderId: "695422300730",
+    appId: "1:695422300730:web:ca6f358101f7481b067b03",
+    measurementId: "G-D0WJBYXWYV"
 };
 
 const app = initializeApp(firebaseConfig);

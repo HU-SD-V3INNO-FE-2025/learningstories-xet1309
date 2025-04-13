@@ -16,6 +16,8 @@ export const FirestoreController = () => {
             email: email,
         }
         await saveCustomer(customer)
+        setEmail("")
+        setName("")
     }
 
     return(
