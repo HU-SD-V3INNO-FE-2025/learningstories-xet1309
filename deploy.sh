@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 # Configuratie
-GH_TOKEN="${{ secrets.GH_TOKEN }}"
 PROJECT_ROOT="learningstories-xet1309"
 DEPLOY_FOLDER="dist"
 GIT_COMMIT_MESSAGE="New build for deploy: $(date)"

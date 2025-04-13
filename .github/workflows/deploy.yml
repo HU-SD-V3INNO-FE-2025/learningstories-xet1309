@@ -25,4 +25,6 @@ jobs:
         run: npm run build
 
       - name: Run deploy script
-        run: sh deploy.sh  # 🚀 Voert jouw `deploy.sh` uit!
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: bash deploy.sh  # Gebruik bash i.p.v. sh
