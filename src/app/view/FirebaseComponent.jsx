@@ -13,6 +13,7 @@ const FirebaseComponent = ({ signIn, signOut, user }) => {
             )}
             {/*<input type="text" className="email"/>*/}
             {/*<input type="text" className="password"/>*/}
+            {/**/}
             <button onClick={signIn}>Sign in</button>
             <button onClick={signOut}>Sign out</button>
         </>
