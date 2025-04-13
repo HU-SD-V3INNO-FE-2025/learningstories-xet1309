@@ -23,3 +23,6 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Run deploy script
+        run: sh deploy.sh  # 🚀 Voert jouw `deploy.sh` uit!
